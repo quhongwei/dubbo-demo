@@ -1,6 +1,7 @@
 package com.dubbo.example.dubbodemo.impl;
 
 import com.dubbo.example.dubbodemo.api.HelloService;
+import com.dubbo.example.dubbodemo.util.NetUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.InitializingBean;
@@ -25,8 +26,8 @@ public class HelloInvoke implements InitializingBean {
 
                 while(true) {
                     try {
-                        String ret = helloService.sayHello("consumer-2-6-x");
-                        System.out.println(ret);
+                        String ret = helloService.sayHello("consumer-2-6-x host=" + NetUtil.getLocalAddress().toString());
+                        //System.out.println(ret);
                         LOGGER.info(ret);
                     } catch (Exception e) {
                         LOGGER.error("", e);

@@ -14,7 +14,7 @@ public class HelloServiceImpl implements HelloService {
     @Override
     public String sayHello(String msg) {
         String ret = "hello " + msg;
-        System.out.println(ret);
+        //System.out.println(ret);
         LOGGER.info(ret);
         return  ret;
     }
