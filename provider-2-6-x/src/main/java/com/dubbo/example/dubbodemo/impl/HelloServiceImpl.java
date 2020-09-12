@@ -10,6 +10,8 @@ public class HelloServiceImpl implements HelloService {
 
     @Override
     public String sayHello(String msg) {
-        return "hello " + msg;
+        String ret = "hello " + msg;
+        System.out.println(ret);
+        return  ret;
     }
 }

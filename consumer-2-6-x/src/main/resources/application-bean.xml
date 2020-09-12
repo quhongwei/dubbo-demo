@@ -6,13 +6,15 @@
        http://dubbo.apache.org/schema/dubbo http://dubbo.apache.org/schema/dubbo/dubbo.xsd">
 
 
-   <dubbo:application name="provider-2-6-x"/>
+   <dubbo:application name="consuemr-2-6-x"/>
 
    <dubbo:registry address="zookeeper://127.0.0.1:2181"/>
 
 
-   <bean id="helloService" class="com.dubbo.example.dubbodemo.impl.HelloServiceImpl"/>
+   <dubbo:reference id="helloService" interface="com.dubbo.example.dubbodemo.api.HelloService"/>
 
 
-   <dubbo:service ref="helloService" interface="com.dubbo.example.dubbodemo.api.HelloService"/>
+   <bean id="helloInvoke" class="com.dubbo.example.dubbodemo.impl.HelloInvoke">
+      <property name="helloService" ref="helloService"/>
+   </bean>
 </beans>
