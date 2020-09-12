@@ -6,7 +6,7 @@
        http://dubbo.apache.org/schema/dubbo http://dubbo.apache.org/schema/dubbo/dubbo.xsd">
 
 
-   <dubbo:application name="consuemr-2-6-x"/>
+   <dubbo:application name="consuemr-2-6-x" logger="slf4j" />
 
    <dubbo:registry address="zookeeper://127.0.0.1:2181"/>
 

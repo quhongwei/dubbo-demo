@@ -24,9 +24,13 @@ public class HelloInvoke implements InitializingBean {
             public void run() {
 
                 while(true) {
-                    String ret = helloService.sayHello("consumer-2-6-x");
-                    System.out.println(ret);
-                    LOGGER.info(ret);
+                    try {
+                        String ret = helloService.sayHello("consumer-2-6-x");
+                        System.out.println(ret);
+                        LOGGER.info(ret);
+                    } catch (Exception e) {
+                        LOGGER.error("", e);
+                    }
                     try {
                         Thread.sleep(3000);
                     } catch (InterruptedException e) {
