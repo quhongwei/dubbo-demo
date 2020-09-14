@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/api/api.iml" filepath="$PROJECT_DIR$/api/api.iml" />
       <module fileurl="file://$PROJECT_DIR$/consumer-2-6-x/consumer26x.iml" filepath="$PROJECT_DIR$/consumer-2-6-x/consumer26x.iml" />
+      <module fileurl="file://$PROJECT_DIR$/consumer-2-7-9/consumer279.iml" filepath="$PROJECT_DIR$/consumer-2-7-9/consumer279.iml" />
       <module fileurl="file://$PROJECT_DIR$/demo-parent.iml" filepath="$PROJECT_DIR$/demo-parent.iml" />
       <module fileurl="file://$PROJECT_DIR$/provider-2-6-x/provider-2-6-x.iml" filepath="$PROJECT_DIR$/provider-2-6-x/provider-2-6-x.iml" />
       <module fileurl="file://$PROJECT_DIR$/provider-2-7-9/provider279.iml" filepath="$PROJECT_DIR$/provider-2-7-9/provider279.iml" />

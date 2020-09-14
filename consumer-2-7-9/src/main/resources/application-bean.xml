@@ -6,14 +6,16 @@
        http://dubbo.apache.org/schema/dubbo http://dubbo.apache.org/schema/dubbo/dubbo.xsd">
 
 
-   <dubbo:application name="provider-2-7-9" logger="slf4j"/>
+   <dubbo:application name="consuemr-2-6-x" logger="slf4j" />
 
-   <!--<dubbo:registry address="zookeeper://127.0.0.1:2181"/>-->
+   <!--<dubbo:registry address="zookeeper://localhost:2181"/>-->
+
    <dubbo:registry address="zookeeper://127.0.0.1:2181?registry-type=service" />
 
+   <dubbo:reference id="helloService" interface="com.dubbo.example.dubbodemo.api.HelloService"/>
 
-   <bean id="helloService" class="com.dubbo.example.dubbodemo.impl.HelloServiceImpl"/>
+   <bean id="helloInvoke" class="com.dubbo.example.dubbodemo.impl.HelloInvoke">
+      <property name="helloService" ref="helloService"/>
+   </bean>
 
-
-   <dubbo:service ref="helloService" interface="com.dubbo.example.dubbodemo.api.HelloService"/>
 </beans>

@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="api" />
         <module name="consumer26x" />
+        <module name="consumer279" />
         <module name="provider-2-6-x" />
         <module name="provider279" />
       </profile>
@@ -15,6 +16,7 @@
     <bytecodeTargetLevel>
       <module name="api" target="1.8" />
       <module name="consumer26x" target="1.8" />
+      <module name="consumer279" target="1.8" />
       <module name="demo-parent" target="1.8" />
       <module name="provider-2-6-x" target="1.8" />
       <module name="provider279" target="1.8" />
