@@ -1,7 +1,7 @@
 package com.dubbo.example.dubbodemo.impl;
 
+import com.dubbo.example.dubbodemo.api.HelloService;
 import com.dubbo.example.dubbodemo.util.NetUtil;
-import org.apache.dubbo.demo.DemoService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.InitializingBean;
@@ -14,9 +14,7 @@ import org.springframework.beans.factory.InitializingBean;
 public class HelloInvoke implements InitializingBean {
     private static final Logger LOGGER                  = LoggerFactory.getLogger(HelloInvoke.class);
 
-    //private HelloService helloService;
-
-    private DemoService demoService;
+    private HelloService helloService;
 
     @Override
     public void afterPropertiesSet() {
@@ -27,13 +25,10 @@ public class HelloInvoke implements InitializingBean {
 
                 while(true) {
                     try {
-                        //String ret = helloService.sayHello("consumer-2-6-x host=" + NetUtil.getLocalAddress().toString());
-                        //System.out.println(ret);
-                        //LOGGER.info(ret);
-
-                        String ret = demoService.sayHello("demoService " + NetUtil.getLocalAddress().toString());
+                        String ret = helloService.sayHello("consumer-2-6-x host=" + NetUtil.getLocalAddress().toString());
                         System.out.println(ret);
                         LOGGER.info(ret);
+
                     } catch (Exception e) {
                         LOGGER.error("", e);
                     }
@@ -49,12 +44,8 @@ public class HelloInvoke implements InitializingBean {
 
     }
 
-    /*
+
     public void setHelloService(HelloService helloService) {
         this.helloService = helloService;
-    }*/
-
-    public void setDemoService(DemoService demoService) {
-        this.demoService = demoService;
     }
 }
