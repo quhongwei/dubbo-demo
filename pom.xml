@@ -23,6 +23,7 @@
         <module>provider-2-6-x</module>
         <module>api</module>
         <module>consumer-2-6-x</module>
+        <module>provider-2-7-9</module>
     </modules>
     <properties>
         

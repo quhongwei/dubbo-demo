@@ -8,13 +8,16 @@
 
    <dubbo:application name="consuemr-2-6-x" logger="slf4j" />
 
-   <dubbo:registry address="zookeeper://127.0.0.1:2181"/>
+   <dubbo:registry address="zookeeper://localhost:2181"/>
 
-
+<!--
    <dubbo:reference id="helloService" interface="com.dubbo.example.dubbodemo.api.HelloService"/>
+-->
 
+   <dubbo:reference interface="org.apache.dubbo.demo.DemoService" timeout="3000" id="demoService"/>
 
    <bean id="helloInvoke" class="com.dubbo.example.dubbodemo.impl.HelloInvoke">
-      <property name="helloService" ref="helloService"/>
+      <property name="demoService" ref="demoService"/>
    </bean>
+
 </beans>
