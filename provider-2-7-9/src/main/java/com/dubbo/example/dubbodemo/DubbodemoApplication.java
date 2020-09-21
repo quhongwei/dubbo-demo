@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ImportResource;
 
 @SpringBootApplication
-@ImportResource(locations = {"application-bean.xml"})
+@ImportResource(locations = {"application-multiple.xml"})
 public class DubbodemoApplication {
 
     public static void main(String[] args) throws Exception{
