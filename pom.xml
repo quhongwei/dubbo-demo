@@ -25,6 +25,7 @@
         <module>consumer-2-6-x</module>
         <module>provider-2-7-9</module>
         <module>consumer-2-7-9</module>
+        <module>socket-test</module>
     </modules>
     <properties>
         

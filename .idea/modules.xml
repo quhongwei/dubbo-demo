@@ -8,6 +8,7 @@
       <module fileurl="file://$PROJECT_DIR$/demo-parent.iml" filepath="$PROJECT_DIR$/demo-parent.iml" />
       <module fileurl="file://$PROJECT_DIR$/provider-2-6-x/provider-2-6-x.iml" filepath="$PROJECT_DIR$/provider-2-6-x/provider-2-6-x.iml" />
       <module fileurl="file://$PROJECT_DIR$/provider-2-7-9/provider279.iml" filepath="$PROJECT_DIR$/provider-2-7-9/provider279.iml" />
+      <module fileurl="file://$PROJECT_DIR$/socket-test/sockettest.iml" filepath="$PROJECT_DIR$/socket-test/sockettest.iml" />
     </modules>
   </component>
 </project>
