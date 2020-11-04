@@ -6,12 +6,13 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="consumer26x" />
         <module name="api" />
+        <module name="consumer26x" />
+        <module name="consumer279" />
+        <module name="jrafttest" />
         <module name="provider-2-6-x" />
         <module name="provider279" />
         <module name="sockettest" />
-        <module name="consumer279" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -19,6 +20,7 @@
       <module name="consumer26x" target="1.8" />
       <module name="consumer279" target="1.8" />
       <module name="demo-parent" target="1.8" />
+      <module name="jrafttest" target="1.8" />
       <module name="provider-2-6-x" target="1.8" />
       <module name="provider279" target="1.8" />
       <module name="sockettest" target="1.8" />
@@ -26,12 +28,12 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="api" options="-parameters" />
-      <module name="consumer26x" options="-parameters" />
-      <module name="consumer279" options="-parameters" />
-      <module name="provider-2-6-x" options="-parameters" />
-      <module name="provider279" options="-parameters" />
-      <module name="sockettest" options="-parameters" />
+      <module name="api" options="" />
+      <module name="consumer26x" options="" />
+      <module name="consumer279" options="" />
+      <module name="provider-2-6-x" options="" />
+      <module name="provider279" options="" />
+      <module name="sockettest" options="" />
     </option>
   </component>
 </project>

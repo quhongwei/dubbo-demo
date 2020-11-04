@@ -26,6 +26,7 @@
         <module>provider-2-7-9</module>
         <module>consumer-2-7-9</module>
         <module>socket-test</module>
+        <module>jrafttest</module>
     </modules>
     <properties>
         

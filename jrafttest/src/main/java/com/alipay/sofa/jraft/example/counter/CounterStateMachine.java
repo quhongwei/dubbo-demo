@@ -101,7 +101,7 @@ public class CounterStateMachine extends StateMachineAdapter {
                         final long delta = counterOperation.getDelta();
                         final long prev = this.value.get();
                         current = this.value.addAndGet(delta);
-                        LOG.info("Added value={} by delta={} at logIndex={}", prev, delta, iter.getIndex());
+                        //LOG.info("Added value={} by delta={} at logIndex={}", prev, delta, iter.getIndex());
                         break;
                 }
 

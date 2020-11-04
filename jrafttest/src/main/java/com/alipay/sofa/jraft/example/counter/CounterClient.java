@@ -31,7 +31,7 @@ import java.util.concurrent.Executor;
 public class CounterClient {
 
     public static void main(final String[] args) throws Exception {
-        if (args.length != 2) {
+        if (args.length != 3) {
             System.out.println("Useage : java com.alipay.sofa.jraft.example.counter.CounterClient {groupId} {conf}");
             System.out
                 .println("Example: java com.alipay.sofa.jraft.example.counter.CounterClient counter 127.0.0.1:8081,127.0.0.1:8082,127.0.0.1:8083");
@@ -39,6 +39,7 @@ public class CounterClient {
         }
         final String groupId = args[0];
         final String confStr = args[1];
+        final int count = Integer.parseInt(args[2]);
 
         final Configuration conf = new Configuration();
         if (!conf.parse(confStr)) {
@@ -56,14 +57,14 @@ public class CounterClient {
 
         final PeerId leader = RouteTable.getInstance().selectLeader(groupId);
         System.out.println("Leader is " + leader);
-        final int n = 2;//Integer.MAX_VALUE;
-        final CountDownLatch latch = new CountDownLatch(n);
+        //final int n = 2;//Integer.MAX_VALUE;
+        //final CountDownLatch latch = new CountDownLatch(count);
         final long start = System.currentTimeMillis();
-        for (int i = 0; i < n; i++) {
-            incrementAndGet(cliClientService, leader, i, latch);
+        for (int i = 0; i < count; i++) {
+            incrementAndGet(cliClientService, leader, i, null);
         }
-        latch.await();
-        System.out.println(n + " ops, cost : " + (System.currentTimeMillis() - start) + " ms.");
+        //latch.await();
+        System.out.println(count + " ops, cost : " + (System.currentTimeMillis() - start) + " ms.");
         System.exit(0);
     }
 
@@ -72,6 +73,7 @@ public class CounterClient {
                                                                                InterruptedException {
         final IncrementAndGetRequest request = new IncrementAndGetRequest();
         request.setDelta(delta);
+       /*
         cliClientService.getRpcClient().invokeAsync(leader.getEndpoint(), request, new InvokeCallback() {
 
             @Override
@@ -89,7 +91,13 @@ public class CounterClient {
             public Executor executor() {
                 return null;
             }
-        }, 5000);
+        }, 5000);*/
+
+       try {
+           cliClientService.getRpcClient().invokeSync(leader.getEndpoint(), request, 5000);
+       } catch (Throwable e) {
+           e.printStackTrace();
+       }
     }
 
 }

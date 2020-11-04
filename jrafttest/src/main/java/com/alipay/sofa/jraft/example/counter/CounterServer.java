@@ -119,7 +119,7 @@ public class CounterServer {
         // 关闭 CLI 服务。
         nodeOptions.setDisableCli(false);
         // 每隔30秒做一次 snapshot
-        nodeOptions.setSnapshotIntervalSecs(30);
+        //nodeOptions.setSnapshotIntervalSecs(30);
         // 解析参数
         final PeerId serverId = new PeerId();
         if (!serverId.parse(serverIdStr)) {
